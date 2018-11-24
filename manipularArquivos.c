@@ -59,19 +59,24 @@ void listarAquivo()
     while(fread(&A, sizeof(livro), 1, fp))
     {
 
-        caixa(c[0],c[1],c[2],c[3]);
-        gotoxy(xy[0], xy[1], xy[2], xy[3]);
-        printf("Codigo: %s \n", A.codigo);
-        gotoxy(xy[0], xy[1] + 2, xy[2], xy[3]);
-        //gotoxy(30, 22, 20, 20);
-        printf("Titulo: %s \n", A.titulo);
-        gotoxy(xy[0], xy[1] + 4, xy[2], xy[3]);
-        //gotoxy(30, 24, 20, 20);
-        printf("Autor: %s \n", A.autor);
+        if(!strcmp(A.titulo, "0") == 0)
+        {
+            caixa(c[0],c[1],c[2],c[3]);
+            gotoxy(xy[0], xy[1], xy[2], xy[3]);
+            printf("Codigo: %s \n", A.codigo);
+            gotoxy(xy[0], xy[1] + 2, xy[2], xy[3]);
+            //gotoxy(30, 22, 20, 20);
+            printf("Titulo: %s \n", A.titulo);
+            gotoxy(xy[0], xy[1] + 4, xy[2], xy[3]);
+            //gotoxy(30, 24, 20, 20);
+            printf("Autor: %s \n", A.autor);
 
-        xy[1] += 8;
-        c[1] += 8;
-        c[3] += 8;
+            xy[1] += 8;
+            c[1] += 8;
+            c[3] += 8;
+        }
+
+
     }
 }
 
@@ -89,8 +94,10 @@ void alterarArquivo(char str[], char str2[])
     //caixa();
     gotoxy(xy[0], xy[1], xy[2], xy[3]);
     printf("%s", str);
+
     scanf("%s", pesquisa);
-    //fgets(A.autor, sizeof(A.autor), stdin);
+//    fgets(pesquisa, sizeof(pesquisa), stdin);
+//    fflush(stdin);
 
     system("cls");
 
@@ -99,8 +106,14 @@ void alterarArquivo(char str[], char str2[])
     {
         if (fread(&A, sizeof(livro), 1, fp))
         {
+            printf("%i\n",strcmp(A.titulo, pesquisa));
+            printf("titulo %s\n",A.titulo);
+            printf("pesquisa %s\n",pesquisa);
+
             if (strcmp(A.titulo, pesquisa) == 0)
             {
+                //system("cls");
+
 
                 caixa(c[0],c[1],c[2],c[3]);
 
@@ -117,6 +130,9 @@ void alterarArquivo(char str[], char str2[])
                 printf(str2);
 
                 scanf("%i", &op);
+//                fgets(op, sizeof(op), stdin);
+//                fflush(stdin);
+
 
                 if(op)
                 {
@@ -138,15 +154,26 @@ void alterarArquivo(char str[], char str2[])
 
                 break;
             }
-            if (strcmp(A.titulo, pesquisa) != 0)
-            {
-                caixa(c[0],c[1],c[2],c[3]);
-                gotoxy(xy[0], xy[1], xy[2], xy[3]);
-                printf("Livro nao encontrado\n");
-
-            }
+//            if (strcmp(A.titulo, pesquisa) != 0)
+//            {
+//                caixa(c[0],c[1],c[2],c[3]);
+//                gotoxy(xy[0], xy[1], xy[2], xy[3]);
+//                printf("Livro nao encontrado\n");
+//
+//            }
         }
+
+
+
     }
+
+    if (strcmp(A.titulo, pesquisa) != 0)
+        {
+            caixa(c[0],c[1],c[2],c[3]);
+            gotoxy(xy[0], xy[1], xy[2], xy[3]);
+            printf("Livro nao encontrado\n");
+
+        }
 }
 
 void excluirArquivo(char str[], char str2[])
@@ -163,7 +190,8 @@ void excluirArquivo(char str[], char str2[])
     gotoxy(xy[0], xy[1], xy[2], xy[3]);
     printf("%s", str);
     scanf("%s", pesquisa);
-    //fgets(pesquisa, sizeof(pesquisa), stdin);
+//    fgets(pesquisa, sizeof(pesquisa), stdin);
+//    fflush(stdin);
 
     system("cls");
 
@@ -174,6 +202,8 @@ void excluirArquivo(char str[], char str2[])
         {
             if (strcmp(A.titulo, pesquisa) == 0)
             {
+
+                 system("cls");
 
                 caixa(c[0],c[1],c[2],c[3]);
 
@@ -245,7 +275,8 @@ void pesquisarArquivo(char str[])
     gotoxy(xy[0], xy[1], xy[2], xy[3]);
     printf("%s", str);
     scanf("%s", pesquisa);
-    //fgets(pesquisa, sizeof(pesquisa), stdin);
+//    fgets(pesquisa, sizeof(pesquisa), stdin);
+//    fflush(stdin);
 
     system("cls");
 
@@ -256,6 +287,7 @@ void pesquisarArquivo(char str[])
         {
             if (strcmp(A.titulo, pesquisa) == 0)
             {
+                 system("cls");
                 caixa(c[0],c[1],c[2],c[3]);
                 gotoxy(xy[0], xy[1], xy[2], xy[3]);
                 printf("Titulo: %s\n", A.titulo);
@@ -296,6 +328,8 @@ void criarRelatorio()
     printf("Digite o nome to documento: ");
     gotoxy(64, 11);
     scanf("%s", arquivo);
+//    fgets(arquivo, sizeof(arquivo), stdin);
+//    fflush(stdin);
     strcat(arquivo, ".txt");
 
     r = fopen(arquivo, "w");
@@ -307,14 +341,19 @@ void criarRelatorio()
 
     while(fread(&A, sizeof(livro), 1, fp))
     {
-        strcpy(codigo, A.codigo);
-        strcpy(titulo, A.titulo);
-        strcpy(autor, A.autor);
 
-        fprintf(r, "Codigo: %s\n", codigo);
-        fprintf(r, "Autor: %s\n", autor);
-        fprintf(r, "Titulo: %s\n", titulo);
-        fprintf(r, "\n\n");
+        if(!strcmp(A.titulo, "0") == 0)
+        {
+
+            strcpy(codigo, A.codigo);
+            strcpy(titulo, A.titulo);
+            strcpy(autor, A.autor);
+
+            fprintf(r, "Codigo: %s\n", codigo);
+            fprintf(r, "Autor: %s\n", autor);
+            fprintf(r, "Titulo: %s\n", titulo);
+            fprintf(r, "\n\n");
+        }
     }
 
     fclose(r);

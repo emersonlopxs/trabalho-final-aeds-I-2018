@@ -4,21 +4,30 @@
 
 #include "livro.h"
 
-livro novoLivro(){
+livro novoLivro()
+{
 
     livro A;
     /// TODO: Validar o input to usuario
     // todos sao strings
+
     gotoxy(36,8);
-    // permitir espacos
-    scanf("[^\n]s", A.codigo);
-    //fgets(A.codigo, sizeof(A.codigo), stdin);
+    scanf("%s", A.codigo);
     gotoxy(36,11);
     scanf("%s", A.titulo);
-    //fgets(A.titulo, sizeof(A.titulo), stdin);
     gotoxy(36, 14);
     scanf("%s", A.autor);
-    //fgets(A.autor, sizeof(A.autor), stdin);
+
+//    gotoxy(36,8);
+//    // permitir espacos
+//    fgets(A.codigo, sizeof(A.codigo), stdin);
+//    fflush(stdin);
+//    gotoxy(36,11);
+//    fgets(A.titulo, sizeof(A.titulo), stdin);
+//    fflush(stdin);
+//    gotoxy(36, 14);
+//    fgets(A.autor, sizeof(A.autor), stdin);
+//    fflush(stdin);
 
     return A;
 }
