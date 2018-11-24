@@ -17,27 +17,10 @@ void abrirAquivo()
 {
     fp = fopen("livro.txt", "rb+");
 
-    /// quando cadastro apos abrir ele sobrescreve
-//        livro A;
-//        strcpy(A.autor, "xxx");
-//        strcpy(A.titulo, "xxx");
-//        strcpy(A.codigo, "xxx");
-//
-//        fwrite(&A, sizeof(livro), 1, fp);
-
-
     if (fp == NULL)
     {
 
         fp = fopen("livro.txt", "wb+");
-
-//        livro A;
-//        strcpy(A.autor, "xxx");
-//        strcpy(A.titulo, "xxx");
-//        strcpy(A.codigo, "xxx");
-//
-//        fwrite(&A, sizeof(livro), 1, fp);
-
         if (fp == NULL)
         {
             printf("Erro ao criar arquivo\n");
@@ -69,64 +52,10 @@ void listarAquivo()
 {
     system("cls");
     livro A;
-
     fseek(fp,0,SEEK_SET);
-
-    int a = fread(&A, sizeof(livro), 1, fp);
-    int b = sizeof(livro);
-    printf("a: %i\nb: %i\n", a, b);
 
     int xy[4] = {30, 10, 20, 12};
     int c[4] = {20, 9, 100, 15};
-
-    printf("%i", feof(fp));
-
-
-    while (!feof(fp))
-    {
-
-        caixa(c[0],c[1],c[2],c[3]);
-        gotoxy(xy[0], xy[1], xy[2], xy[3]);
-        printf("Titulo: %s\n", A.titulo);
-        gotoxy(xy[0], xy[1] + 2, xy[2], xy[3]);
-        printf("Autor: %s\n", A.autor);
-        gotoxy(xy[0], xy[1] + 4, xy[2], xy[3]);
-        printf("Codigo %s\n", A.codigo);
-
-        xy[1] += 8;
-        c[1] += 8;
-        c[3] += 8;
-
-        while(fread(&A, sizeof(livro), 1, fp))
-        {
-
-            caixa(c[0],c[1],c[2],c[3]);
-            gotoxy(xy[0], xy[1], xy[2], xy[3]);
-            printf("Codigo: %s \n", A.codigo);
-            gotoxy(xy[0], xy[1] + 2, xy[2], xy[3]);
-            //gotoxy(30, 22, 20, 20);
-            printf("Titulo: %s \n", A.titulo);
-            gotoxy(xy[0], xy[1] + 4, xy[2], xy[3]);
-            //gotoxy(30, 24, 20, 20);
-            printf("Autor: %s \n", A.autor);
-
-            xy[1] += 8;
-            c[1] += 8;
-            c[3] += 8;
-
-
-
-        }
-
-
-        break;
-
-    }
-
-
-
-
-    /*
     while(fread(&A, sizeof(livro), 1, fp))
     {
 
@@ -134,16 +63,16 @@ void listarAquivo()
         gotoxy(xy[0], xy[1], xy[2], xy[3]);
         printf("Codigo: %s \n", A.codigo);
         gotoxy(xy[0], xy[1] + 2, xy[2], xy[3]);
+        //gotoxy(30, 22, 20, 20);
         printf("Titulo: %s \n", A.titulo);
         gotoxy(xy[0], xy[1] + 4, xy[2], xy[3]);
+        //gotoxy(30, 24, 20, 20);
         printf("Autor: %s \n", A.autor);
 
         xy[1] += 8;
         c[1] += 8;
         c[3] += 8;
-
     }
-    */
 }
 
 
@@ -209,12 +138,12 @@ void alterarArquivo(char str[], char str2[])
                 break;
             }
             if (strcmp(A.titulo, pesquisa) != 0)
-    {
-        caixa(c[0],c[1],c[2],c[3]);
-        gotoxy(xy[0], xy[1], xy[2], xy[3]);
-        printf("Livro nao encontrado\n");
+            {
+                caixa(c[0],c[1],c[2],c[3]);
+                gotoxy(xy[0], xy[1], xy[2], xy[3]);
+                printf("Livro nao encontrado\n");
 
-    }
+            }
         }
     }
 }
@@ -264,9 +193,9 @@ void excluirArquivo(char str[], char str2[])
                 {
                     livro A;
                     system("cls");
-//                    strcpy(A.autor, "0");
-//                    strcpy(A.codigo, "0");
-//                    strcpy(A.titulo, "0");
+                    strcpy(A.autor, "0");
+                    strcpy(A.codigo, "0");
+                    strcpy(A.titulo, "0");
 
 //                    A = (const livro)
 //                    {
@@ -349,8 +278,45 @@ void pesquisarArquivo(char str[])
 void criarRelatorio()
 {
     system("cls");
+
+    livro A;
+    fseek(fp,0,SEEK_SET);
+
+    FILE *r;
+
+    char arquivo[100];
+
+    caixa(34, 9, 90, 13);
+    gotoxy(36, 11);
+    printf("Digite o nome to documento: ");
+    gotoxy(64, 11);
+    scanf("%s", arquivo);
+    strcat(arquivo, ".txt");
+
+    r = fopen(arquivo, "w");
+
+    char codigo[100];
+    char titulo[100];
+    char autor[100];
+
+
+    while(fread(&A, sizeof(livro), 1, fp))
+    {
+        strcpy(codigo, A.codigo);
+        strcpy(titulo, A.titulo);
+        strcpy(autor, A.autor);
+
+        fprintf(r, "Codigo: %s\n", codigo);
+        fprintf(r, "Autor: %s\n", autor);
+        fprintf(r, "Titulo: %s\n", titulo);
+        fprintf(r, "\n\n");
+    }
+
+    fclose(r);
+
+    system("cls");
     gotoxy(30, 20, 20, 20);
-    printf("criar relatorio");
+    printf("Arquivo %s criado!", arquivo);
 }
 
 

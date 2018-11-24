@@ -89,6 +89,9 @@ int handleMenuOptions()
             case 4:
                 listarAquivo();
                 break;
+            case 5:
+                criarRelatorio();
+                break;
         }
 
             /*
