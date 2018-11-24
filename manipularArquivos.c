@@ -90,6 +90,7 @@ void alterarArquivo(char str[], char str2[])
     gotoxy(xy[0], xy[1], xy[2], xy[3]);
     printf("%s", str);
     scanf("%s", pesquisa);
+    //fgets(A.autor, sizeof(A.autor), stdin);
 
     system("cls");
 
@@ -162,6 +163,7 @@ void excluirArquivo(char str[], char str2[])
     gotoxy(xy[0], xy[1], xy[2], xy[3]);
     printf("%s", str);
     scanf("%s", pesquisa);
+    //fgets(pesquisa, sizeof(pesquisa), stdin);
 
     system("cls");
 
@@ -212,6 +214,8 @@ void excluirArquivo(char str[], char str2[])
                     printf("arquivo apagado!\n");
                 }
 
+                system("cls");
+
 
                 break;
             }
@@ -241,6 +245,7 @@ void pesquisarArquivo(char str[])
     gotoxy(xy[0], xy[1], xy[2], xy[3]);
     printf("%s", str);
     scanf("%s", pesquisa);
+    //fgets(pesquisa, sizeof(pesquisa), stdin);
 
     system("cls");
 
