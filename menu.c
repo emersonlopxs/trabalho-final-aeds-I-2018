@@ -78,10 +78,10 @@ int handleMenuOptions()
                 salvarArquivo();
                 break;
             case 1:
-                alterarArquivo();
+                alterarArquivo("Digite o titulo do livro que voce quer alterar: ", "voce quer alterar esse livro? 0-nao 1-sim ");
                 break;
             case 2:
-                excluirArquivo("Digite o titulo do livro que voce quer excluir: ");
+                excluirArquivo("Digite o titulo do livro que voce quer excluir: ", "voce quer excluir esse livro? 0-nao 1-sim ");
                 break;
             case 3:
                 pesquisarArquivo("Digite o titulo do livro que voce quer encontrar: ");

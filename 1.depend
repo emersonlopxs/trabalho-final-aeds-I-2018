@@ -6,7 +6,7 @@
 	<conio.h>
 	"livro.h"
 
-1543018916 c:\users\lupuselit\desktop\1\livro.h
+1543025790 c:\users\lupuselit\desktop\1\livro.h
 
 1542914805 c:\users\lupuselit\desktop\1\livro.c
 	<stdio.h>
@@ -25,7 +25,7 @@
 	<windows.h>
 	"livro.h"
 
-1543022496 source:c:\users\lupuselit\desktop\1\menu.c
+1543025593 source:c:\users\lupuselit\desktop\1\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -34,7 +34,7 @@
 
 1543021115 source:c:\users\lupuselit\desktop\1\errorhandlers.c
 
-1543022913 source:c:\users\lupuselit\desktop\1\manipulararquivos.c
+1543027271 source:c:\users\lupuselit\desktop\1\manipulararquivos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

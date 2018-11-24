@@ -14,7 +14,9 @@ typedef struct livros livro;
 livro novoLivro();
 void listarAquivo();
 void abrirArquivo();
+
 void fecharArquivo();
+void mostrarTelaCadastro();
 //void imprimir();
 
 
