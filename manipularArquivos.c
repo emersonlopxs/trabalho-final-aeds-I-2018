@@ -86,6 +86,7 @@ void alterarArquivo(char str[], char str2[])
     int xy[4] = {30, 14, 20, 16};
     int c[4] = {20, 13, 100, 19};
     int op;
+    int contador = 0;
 
     char pesquisa[100];
     livro A;
@@ -113,12 +114,8 @@ void alterarArquivo(char str[], char str2[])
             if (strcmp(A.titulo, pesquisa) == 0)
             {
                 //system("cls");
-
-
+                contador++;
                 caixa(c[0],c[1],c[2],c[3]);
-
-
-
                 gotoxy(xy[0], xy[1], xy[2], xy[3]);
                 printf("Titulo: %s\n", A.titulo);
                 gotoxy(xy[0], xy[1] + 2, xy[2], xy[3]);
@@ -141,11 +138,8 @@ void alterarArquivo(char str[], char str2[])
                     mostrarTelaCadastro();
                     A = novoLivro();
                     fseek(fp, -sizeof(livro), SEEK_CUR);
-
                     fwrite(&A, sizeof(livro), 1, fp);
-
                     system("cls");
-
                     gotoxy(30, 20, 20, 20);
                     printf("arquivo alterado!\n");
 
@@ -154,19 +148,14 @@ void alterarArquivo(char str[], char str2[])
 
                 break;
             }
-//            if (strcmp(A.titulo, pesquisa) != 0)
-//            {
-//                caixa(c[0],c[1],c[2],c[3]);
-//                gotoxy(xy[0], xy[1], xy[2], xy[3]);
-//                printf("Livro nao encontrado\n");
-//
-//            }
         }
+
 
 
 
     }
 
+    /*
     if (strcmp(A.titulo, pesquisa) != 0)
         {
             caixa(c[0],c[1],c[2],c[3]);
@@ -174,6 +163,18 @@ void alterarArquivo(char str[], char str2[])
             printf("Livro nao encontrado\n");
 
         }
+        */
+    if(!contador)
+    {
+        caixa(c[0],c[1],c[2],c[3]);
+        gotoxy(xy[0], xy[1], xy[2], xy[3]);
+        printf("Livro nao encontrado\n");
+    }
+
+    gotoxy(xy[0], xy[1] + 3, xy[2], xy[3]);
+    printf("Titulo: %s\n", A.titulo);
+    gotoxy(xy[0], xy[1], xy[2], xy[3]);
+    printf("%i", strcmp(A.titulo, pesquisa));
 }
 
 void excluirArquivo(char str[], char str2[])
@@ -203,7 +204,7 @@ void excluirArquivo(char str[], char str2[])
             if (strcmp(A.titulo, pesquisa) == 0)
             {
 
-                 system("cls");
+                system("cls");
 
                 caixa(c[0],c[1],c[2],c[3]);
 
@@ -287,7 +288,7 @@ void pesquisarArquivo(char str[])
         {
             if (strcmp(A.titulo, pesquisa) == 0)
             {
-                 system("cls");
+                system("cls");
                 caixa(c[0],c[1],c[2],c[3]);
                 gotoxy(xy[0], xy[1], xy[2], xy[3]);
                 printf("Titulo: %s\n", A.titulo);
