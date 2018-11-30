@@ -3,9 +3,10 @@
 #include <windows.h>
 #include <conio.h>
 
-
 #include "livro.h"
 
+// nao precisa ficar escovando bits vlws flws
+// 8/10
 
 int menu(){
     //caixa(20,2,100,25);
