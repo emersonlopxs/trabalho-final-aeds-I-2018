@@ -43,3 +43,4 @@ void caixa(int x, int y, int x1, int y1)
     gotoxy(x1,y1);
     printf("\xD9");
 }
+

@@ -1,31 +1,31 @@
 # depslib dependency file v1.0
-1543016212 source:c:\users\lupuselit\desktop\1\main.c
+1543618672 source:c:\users\lupuselit\desktop\1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	<conio.h>
 	"livro.h"
 
-1543029390 c:\users\lupuselit\desktop\1\livro.h
+1543618672 c:\users\lupuselit\desktop\1\livro.h
 
 1542914805 c:\users\lupuselit\desktop\1\livro.c
 	<stdio.h>
 	<stdlib.h>
 	"livro.h"
 
-1543080380 source:c:\users\lupuselit\desktop\1\livro.c
+1543618678 source:c:\users\lupuselit\desktop\1\livro.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	"livro.h"
 
-1542990676 source:c:\users\lupuselit\desktop\1\gotoxy.c
+1543618672 source:c:\users\lupuselit\desktop\1\gotoxy.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	"livro.h"
 
-1543032313 source:c:\users\lupuselit\desktop\1\menu.c
+1543618936 source:c:\users\lupuselit\desktop\1\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -34,7 +34,7 @@
 
 1543024715 source:c:\users\lupuselit\desktop\1\errorhandlers.c
 
-1543087593 source:c:\users\lupuselit\desktop\1\manipulararquivos.c
+1543618672 source:c:\users\lupuselit\desktop\1\manipulararquivos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

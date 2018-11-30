@@ -3,28 +3,30 @@
 #include <windows.h>
 #include <conio.h>
 
+
 #include "livro.h"
 
 
 int menu(){
     //caixa(20,2,100,25);
     //caixa do menu
-    caixa(20, 2, 100, 8);
+    TextColor(14);
+    caixa(27, 3, 84, 7);
     // this will return an option that you can use
     //char opcoes[4][15]={"Criar", "Alterar", "Apagar", "Sair"};
 
-    char opcoes[6][15] = {"Cadastro", "Alteracao", "Exclusao", "Pesquisa", "Listagem", "Relatorio"};
+    char opcoes[6][15] = {"Cadastrar", "Alterar", "Excluir", "Pesquisar", "Listar", "Relatorio"};
 
-    int cols[6] = {30, 40, 50, 60, 70, 80};
+    int cols[6] = {30, 40, 48, 56, 66, 73};
     int opcao = 0, i, tecla;
-    TextColor(7);
+    TextColor(15);
     for(i=0;i<6;i++)
     {
         gotoxy(cols[i], 5);
         printf("%-8s", opcoes[i]);
     }
     while(1){
-        TextColor(BACKGROUND_GREEN);
+        TextColor(BACKGROUND_INTENSITY);
         gotoxy(cols[opcao], 5);
         printf("%-8s", opcoes[opcao]);
         tecla = getch();
@@ -46,25 +48,42 @@ int menu(){
 }
 
 void mostrarTelaCadastro(){
-    // caixa principal
-    // caixa(5,2,70,20);
-    caixa(20,2,100,25);
+  TextColor(14);
+    caixa(9,2,90,28);
+    TextColor(14);
     // caixa do titulo
-    caixa(30,3,90,5);
+    caixa(18,3,80,5);
 
-    TextColor(BACKGROUND_GREEN);
 
-    gotoxy(50,4);printf("Cadastar Novo Livro");
-    TextColor(7);
+    TextColor(15);
+
+
+    gotoxy(39,4);printf("Cadastar Novo Livro");
+    TextColor(15);
 
     gotoxy(25,8);printf("Codigo:");
-    caixa(35,7,55,9);
+    caixa(33,7,75,9);
 
     gotoxy(25,11);printf("Titulo:");
-    caixa(35,10,75,12);
+    caixa(33,10,75,12);
 
     gotoxy(25,14);printf("Autor:");
-    caixa(35,13,75,15);
+    caixa(33,13,75,15);
+
+    gotoxy(25,17);printf("Numero de paginas:");
+    caixa(44,16,75,18);
+
+    gotoxy(25,20);printf("Ano de Lancamento:");
+    caixa(44,19,75,21);
+
+    gotoxy(25,23);printf("Total de capitulos:");
+    caixa(44,22,75,24);
+
+     gotoxy(25,26);printf("Editora:");
+    caixa(33,25,75,27);
+
+
+
 }
 
 int handleMenuOptions()
@@ -74,22 +93,27 @@ int handleMenuOptions()
       while(opcao != 8) {
 
         switch(opcao) {
+
             case 0:
+
                 salvarArquivo();
                 break;
             case 1:
-                alterarArquivo("Digite o titulo do livro que voce quer alterar: ", "voce quer alterar esse livro? 0-nao 1-sim ");
+                alterarArquivo("Digite o titulo do livro que voce quer alterar: ", "voce quer alterar esse livro? 0 - nao 1 - sim ");
                 break;
             case 2:
-                excluirArquivo("Digite o titulo do livro que voce quer excluir: ", "voce quer excluir esse livro? 0-nao 1-sim ");
+                excluirArquivo("Digite o titulo do livro que voce quer excluir: ", "voce quer excluir esse livro? 0 - nao 1 - sim ");
                 break;
             case 3:
+
                 pesquisarArquivo("Digite o titulo do livro que voce quer encontrar: ");
                 break;
             case 4:
+
                 listarAquivo();
                 break;
             case 5:
+
                 criarRelatorio();
                 break;
         }

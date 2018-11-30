@@ -17,6 +17,16 @@ livro novoLivro()
     scanf("%s", A.titulo);
     gotoxy(36, 14);
     scanf("%s", A.autor);
+    gotoxy(47,17);
+    scanf("%s", A.numerodepaginas);
+    gotoxy(47,20);
+    scanf("%s", A.anodelancamento);
+    gotoxy(47,23);
+    scanf("%s", A.numerodecapitulos);
+    gotoxy(36,26);
+    scanf("%s", A.editora);
+
+
 
 //    gotoxy(36,8);
 //    // permitir espacos
@@ -31,7 +41,4 @@ livro novoLivro()
 
     return A;
 }
-
-
-
 

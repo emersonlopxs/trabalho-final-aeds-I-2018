@@ -6,6 +6,10 @@ struct livros {
     char codigo[100];
     char titulo[100];
     char autor[100];
+    char editora[100];
+    char anodelancamento[100];
+    char numerodepaginas[100];
+    char numerodecapitulos [100];
 };
 
 typedef struct livros livro;
