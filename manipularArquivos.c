@@ -45,9 +45,14 @@ void salvarArquivo()
 
     system("cls");
 
-    gotoxy(30, 20, 20, 20);
-    TextColor(BACKGROUND_INTENSITY);
-    printf("arquivo salvo\n");
+    int co[4] = {20, 9, 120, 13};
+    caixa(co[0], co[1], co[2], co[3]);
+
+    TextColor(5);
+
+    gotoxy(30,11);
+    printf("arquivo salvo!\n");
+    //caixa(48,9,110,11);
 }
 
 void listarAquivo()
@@ -75,21 +80,21 @@ void listarAquivo()
             gotoxy(xy[0], xy[1] + 6, xy[2], xy[3], xy[4], xy[5], xy[6]);
             //gotoxy(30, 24, 20, 20);
             printf("Autor: %s \n", A.autor);
-             gotoxy(xy[0], xy[1] + 8, xy[2], xy[3], xy[4], xy[5], xy[6]);
+            gotoxy(xy[0], xy[1] + 8, xy[2], xy[3], xy[4], xy[5], xy[6]);
             //gotoxy(30, 24, 20, 20);
             printf("Editora: %s \n", A.editora);
-             gotoxy(xy[0], xy[1] + 10, xy[2], xy[3], xy[4], xy[5], xy[6]);
+            gotoxy(xy[0], xy[1] + 10, xy[2], xy[3], xy[4], xy[5], xy[6]);
             //gotoxy(30, 24, 20, 20);
             printf("Ano de lancamento: %s \n", A.anodelancamento);
-             gotoxy(xy[0], xy[1] + 12, xy[2], xy[3], xy[4], xy[5], xy[6]);
+            gotoxy(xy[0], xy[1] + 12, xy[2], xy[3], xy[4], xy[5], xy[6]);
             //gotoxy(30, 24, 20, 20);
             printf("Numero de capitulos: %s \n", A.numerodecapitulos);
-             gotoxy(xy[0], xy[1] + 14, xy[2], xy[3], xy[4], xy[5], xy[6]);
+            gotoxy(xy[0], xy[1] + 14, xy[2], xy[3], xy[4], xy[5], xy[6]);
             //gotoxy(30, 24, 20, 20);
             printf("Numero de paginas: %s \n", A.numerodepaginas);
 
-           xy[1] += 14;
-           // f[1] += 14;
+            xy[1] += 14;
+            // f[1] += 14;
             f[3] += 14;
         }
 
@@ -323,7 +328,9 @@ void excluirArquivo(char str[], char str2[])
 
 void pesquisarArquivo(char str[])
 {
-    int xy[6] = {30, 10, 20, 12};
+    int co[4] = {20, 3, 120, 30};
+
+    int xy[6] = {30, 10};
     int c[4] = {27, 7, 84, 13};
     int f[4] = {27, 9, 84, 25};
     int g[4] = {27, 9, 84, 13};
@@ -334,9 +341,12 @@ void pesquisarArquivo(char str[])
 
     system("cls");
     TextColor(14);
-    caixa(c[0],c[1],c[2],c[3]);
+    //caixa(c[0],c[1],c[2],c[3]);
     //caixa();
+    caixa(co[0], co[1], co[2], co[3]);
     gotoxy(xy[0], xy[1], xy[2], xy[3], xy[4], xy[5], xy[6]);
+
+
     TextColor(15);
     printf("%s", str);
     scanf("%s", pesquisa);
@@ -354,22 +364,68 @@ void pesquisarArquivo(char str[])
             {
                 TextColor(14);
                 system("cls");
-                caixa(f[0],f[1],f[2],f[3]);
+                //caixa(f[0],f[1],f[2],f[3]);
+                caixa(co[0], co[1] + 5, co[2], co[3] + 5);
                 TextColor(15);
-                gotoxy(xy[0], xy[1], xy[2], xy[3], xy[4], xy[5], xy[6]);
-                printf("Titulo: %s\n", A.titulo);
-                gotoxy(xy[0], xy[1] + 2, xy[2], xy[3], xy[4], xy[5], xy[6]);
-                printf("Autor: %s\n", A.autor);
-                gotoxy(xy[0], xy[1] + 4, xy[2], xy[3], xy[4], xy[5], xy[6]);
-                printf("Codigo: %s\n", A.codigo);
-                gotoxy(xy[0], xy[1] + 6, xy[2], xy[3], xy[4], xy[5], xy[6]);
-                printf("Editora: %s\n", A.editora);
-                gotoxy(xy[0], xy[1] + 8, xy[2], xy[3], xy[4], xy[5], xy[6]);
-                printf("Ano de lancamento: %s\n", A.anodelancamento);
-                gotoxy(xy[0], xy[1] + 10, xy[2], xy[3], xy[4], xy[5], xy[6]);
-                printf("Numero total de capitulos: %s\n", A.numerodecapitulos);
-                gotoxy(xy[0], xy[1] + 12, xy[2], xy[3], xy[4], xy[5], xy[6]);
-                printf("Numero total de paginas: %s\n", A.numerodepaginas);
+
+                gotoxy(65,5);
+               // printf("Cadastar Novo Livro");
+                TextColor(15);
+
+                gotoxy(40,10);
+                printf("Codigo: ");
+                gotoxy(50,10);
+                printf("%s\n", A.codigo);
+                caixa(48,9,110,11);
+
+                gotoxy(40,13);
+                printf("Titulo: ");
+                gotoxy(50,13);
+                printf("%s\n", A.titulo);
+                caixa(48,12,110,14);
+
+                gotoxy(29,16);
+                printf("Numero de Paginas: ");
+                gotoxy(50,16);
+                printf("%s\n", A.numerodepaginas);
+                caixa(48,15,110,17);
+
+                gotoxy(29,19);
+                printf("Ano de lancamento: ");
+                gotoxy(50,19);
+                printf("%s\n", A.anodelancamento);
+                caixa(48,18,110,20);
+
+                gotoxy(27,22);
+                printf("Numero de capitulos: ");
+                gotoxy(50,22);
+                printf("%s\n", A.numerodecapitulos);
+                caixa(48,21,110,23);
+
+                gotoxy(39,25);
+                printf("Editora: ");
+                gotoxy(50,25);
+                printf("%s\n", A.editora);
+                caixa(48,24,110,26);
+
+                gotoxy(38,28);
+                printf("Autor(a): ");
+                gotoxy(50,28);
+                printf("%s\n", A.autor);
+                caixa(48,27,110,29);
+
+
+//                gotoxy(35,20);
+//                printf("Ano de lancamento: %s\n", A.anodelancamento);
+//                caixa(54,19,110,21);
+//
+//                gotoxy(35,23);
+//                printf("Numero total de capitulos: %s\n", A.numerodecapitulos);
+//                caixa(54,22,110,24);
+//
+//                gotoxy(35,26);
+//                printf("Editora: %s\n", A.editora);
+//                caixa(43,25,110,27);
 
                 break;
             }
@@ -380,9 +436,10 @@ void pesquisarArquivo(char str[])
     if (strcmp(A.titulo, pesquisa) != 0)
     {
         TextColor(14);
-        caixa(g[0],g[1],g[2],g[3]);
+        //caixa(g[0],g[1],g[2],g[3]);
+        caixa(co[0], co[1], co[2], co[3]);
         TextColor(15);
-        gotoxy(xy[0], xy[1], xy[2], xy[3], xy[4], xy[5]);
+        gotoxy(xy[0], xy[1]);
         printf("Livro nao encontrado\n");
 
     }

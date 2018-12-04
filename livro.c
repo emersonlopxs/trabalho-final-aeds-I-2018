@@ -11,20 +11,27 @@ livro novoLivro()
     /// TODO: Validar o input to usuario
     // todos sao strings
 
-    gotoxy(36,8);
+    gotoxy(50,10);
     scanf("%s", A.codigo);
-    gotoxy(36,11);
+
+    gotoxy(50,13);
     scanf("%s", A.titulo);
-    gotoxy(36, 14);
-    scanf("%s", A.autor);
-    gotoxy(47,17);
+
+    gotoxy(50,16);
     scanf("%s", A.numerodepaginas);
-    gotoxy(47,20);
+
+    gotoxy(50,19);
     scanf("%s", A.anodelancamento);
-    gotoxy(47,23);
+
+    gotoxy(50,22);
     scanf("%s", A.numerodecapitulos);
-    gotoxy(36,26);
+
+    gotoxy(50,25);
     scanf("%s", A.editora);
+
+    gotoxy(50,28);
+    scanf("%s", A.autor);
+
 
 
 
