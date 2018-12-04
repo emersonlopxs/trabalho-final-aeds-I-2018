@@ -12,7 +12,7 @@
 int menu(){
     //caixa(20,2,100,25);
     //caixa do menu
-    TextColor(14);
+    TextColor(9);
     caixa(20, 3, 120, 7);
     // this will return an option that you can use
     //char opcoes[4][15]={"Criar", "Alterar", "Apagar", "Sair"};
@@ -50,8 +50,7 @@ int menu(){
 }
 
 void mostrarTelaCadastro(){
-  TextColor(14);
-
+    TextColor(9);
     int co[4] = {20, 7, 120, 31};
     caixa(co[0], co[1], co[2], co[3]);
 //    caixa(9,2,90,28);
@@ -154,7 +153,7 @@ int handleMenuOptions()
                 alterarArquivo("Digite o titulo do livro que voce quer alterar: ", "voce quer alterar esse livro? 0 - nao 1 - sim ");
                 break;
             case 2:
-                excluirArquivo("Digite o titulo do livro que voce quer excluir: ", "voce quer excluir esse livro? 0 - nao 1 - sim ");
+                excluirArquivo("Digite o titulo do livro que voce quer excluir: ", "VOCE TEM CERTEZA QUE QUER EXCLUIR ESSE LIVRO? 0-NAO 1-SIM ");
                 break;
             case 3:
 

@@ -221,6 +221,139 @@ void alterarArquivo(char str[], char str2[])
 
 void excluirArquivo(char str[], char str2[])
 {
+    int co[4] = {20, 2, 120, 30};
+    int xy[2] = {30, 10};
+    int op;
+
+
+    char pesquisa[100];
+    livro A;
+
+    system("cls");
+    TextColor(14);
+
+    caixa(co[0], co[1], co[2], co[3]);
+    gotoxy(xy[0], xy[1]);
+
+    TextColor(15);
+    printf("%s", str);
+    scanf("%s", pesquisa);
+
+    system("cls");
+
+    fseek(fp,0,SEEK_SET);
+    while (!feof(fp))
+    {
+        if (fread(&A, sizeof(livro), 1, fp))
+        {
+            if (strcmp(A.titulo, pesquisa) == 0)
+            {
+                TextColor(14);
+                system("cls");
+                //caixa(f[0],f[1],f[2],f[3]);
+                caixa(co[0], co[1] + 5, co[2], co[3] + 5);
+                TextColor(15);
+
+                gotoxy(65,5);
+               // printf("Cadastar Novo Livro");
+                TextColor(15);
+
+                gotoxy(40,10);
+                printf("Codigo: ");
+                gotoxy(50,10);
+                printf("%s\n", A.codigo);
+                caixa(48,9,110,11);
+
+                gotoxy(40,13);
+                printf("Titulo: ");
+                gotoxy(50,13);
+                printf("%s\n", A.titulo);
+                caixa(48,12,110,14);
+
+                gotoxy(29,16);
+                printf("Numero de Paginas: ");
+                gotoxy(50,16);
+                printf("%s\n", A.numerodepaginas);
+                caixa(48,15,110,17);
+
+                gotoxy(29,19);
+                printf("Ano de lancamento: ");
+                gotoxy(50,19);
+                printf("%s\n", A.anodelancamento);
+                caixa(48,18,110,20);
+
+                gotoxy(27,22);
+                printf("Numero de capitulos: ");
+                gotoxy(50,22);
+                printf("%s\n", A.numerodecapitulos);
+                caixa(48,21,110,23);
+
+                gotoxy(39,25);
+                printf("Editora: ");
+                gotoxy(50,25);
+                printf("%s\n", A.editora);
+                caixa(48,24,110,26);
+
+                gotoxy(38,28);
+                printf("Autor(a): ");
+                gotoxy(50,28);
+                printf("%s\n", A.autor);
+                caixa(48,27,110,29);
+
+                gotoxy(48,32);
+                TextColor(4);
+                printf(str2);
+
+                scanf("%i", &op);
+
+                if(op)
+                {
+                    livro A;
+                    system("cls");
+                    strcpy(A.autor, "0");
+                    strcpy(A.codigo, "0");
+                    strcpy(A.titulo, "0");
+                    strcpy(A.editora, "0");
+                    strcpy(A.anodelancamento, "0");
+                    strcpy(A.numerodecapitulos, "0");
+                    strcpy(A.numerodepaginas, "0");
+
+                    fseek(fp, -sizeof(livro), SEEK_CUR);
+
+                    fwrite(&A, sizeof(livro), 1, fp);
+
+                    system("cls");
+
+                    caixa(co[0], co[1] + 6, co[2], co[3] - 18);
+                    gotoxy(30,10);
+                    printf("arquivo apagado!\n");
+                }
+
+                //system("cls");
+
+
+
+
+                break;
+            }
+
+        }
+    }
+
+    if (strcmp(A.titulo, pesquisa) != 0)
+    {
+        int co2[4] = {20, 10, 120, 13};
+
+        caixa(co2[0], co[1] + 5, co[2], co[3]);
+
+        TextColor(5);
+
+        gotoxy(30,10);
+        printf("Livro nao encontrado!\n");
+
+    }
+
+    /*
     int xy[6] = {30, 14, 20, 16};
     TextColor(14);
     int f[4] = {27, 10, 84, 27};
@@ -290,13 +423,6 @@ void excluirArquivo(char str[], char str2[])
                     strcpy(A.numerodecapitulos, "0");
                     strcpy(A.numerodepaginas, "0");
 
-
-
-//                    A = (const livro)
-//                    {
-//                        0
-//                    };
-
                     fseek(fp, -sizeof(livro), SEEK_CUR);
 
                     fwrite(&A, sizeof(livro), 1, fp);
@@ -313,6 +439,8 @@ void excluirArquivo(char str[], char str2[])
             }
 //
         }
+
+
     }
     if (strcmp(A.titulo, pesquisa) != 0)
     {
@@ -322,18 +450,14 @@ void excluirArquivo(char str[], char str2[])
         gotoxy(xy[0], xy[1], xy[2], xy[3], xy[4], xy[5], xy[6]);
         printf("Livro nao encontrado\n");
 
-    }
+        */
 
 }
 
 void pesquisarArquivo(char str[])
 {
-    int co[4] = {20, 3, 120, 30};
-
-    int xy[6] = {30, 10};
-    int c[4] = {27, 7, 84, 13};
-    int f[4] = {27, 9, 84, 25};
-    int g[4] = {27, 9, 84, 13};
+    int co[4] = {20, 3, 120, 26};
+    int xy[2] = {30, 10};
 
 
     char pesquisa[100];
@@ -350,8 +474,6 @@ void pesquisarArquivo(char str[])
     TextColor(15);
     printf("%s", str);
     scanf("%s", pesquisa);
-//    fgets(pesquisa, sizeof(pesquisa), stdin);
-//    fflush(stdin);
 
     system("cls");
 
@@ -414,19 +536,6 @@ void pesquisarArquivo(char str[])
                 printf("%s\n", A.autor);
                 caixa(48,27,110,29);
 
-
-//                gotoxy(35,20);
-//                printf("Ano de lancamento: %s\n", A.anodelancamento);
-//                caixa(54,19,110,21);
-//
-//                gotoxy(35,23);
-//                printf("Numero total de capitulos: %s\n", A.numerodecapitulos);
-//                caixa(54,22,110,24);
-//
-//                gotoxy(35,26);
-//                printf("Editora: %s\n", A.editora);
-//                caixa(43,25,110,27);
-
                 break;
             }
 
@@ -435,12 +544,14 @@ void pesquisarArquivo(char str[])
 
     if (strcmp(A.titulo, pesquisa) != 0)
     {
-        TextColor(14);
-        //caixa(g[0],g[1],g[2],g[3]);
-        caixa(co[0], co[1], co[2], co[3]);
-        TextColor(15);
-        gotoxy(xy[0], xy[1]);
-        printf("Livro nao encontrado\n");
+        int co2[4] = {20, 10, 120, 13};
+
+        caixa(co2[0], co[1] + 5, co[2], co[3]);
+
+        TextColor(5);
+
+        gotoxy(30,10);
+        printf("Livro nao encontrado!\n");
 
     }
 
