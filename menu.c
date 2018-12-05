@@ -153,11 +153,11 @@ int handleMenuOptions()
                 alterarArquivo("Digite o titulo do livro que voce quer alterar: ", "voce quer alterar esse livro? 0 - nao 1 - sim ");
                 break;
             case 2:
-                excluirArquivo("Digite o titulo do livro que voce quer excluir: ", "VOCE TEM CERTEZA QUE QUER EXCLUIR ESSE LIVRO? 0-NAO 1-SIM ");
+                excluirArquivo("Digite o titulo do livro: ", "VOCE TEM CERTEZA QUE QUER EXCLUIR ESSE LIVRO? 0-NAO 1-SIM ");
                 break;
             case 3:
 
-                pesquisarArquivo("Digite o titulo do livro que voce quer encontrar: ");
+                pesquisarArquivo("Digite o titulo do livro: ");
                 break;
             case 4:
 

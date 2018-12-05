@@ -221,24 +221,25 @@ void alterarArquivo(char str[], char str2[])
 
 void excluirArquivo(char str[], char str2[])
 {
-    int co[4] = {20, 2, 120, 30};
+    int co[4] = {20, 3, 120, 26};
     int xy[2] = {30, 10};
     int op;
-
 
     char pesquisa[100];
     livro A;
 
     system("cls");
-    TextColor(14);
-
-    caixa(co[0], co[1], co[2], co[3]);
-    gotoxy(xy[0], xy[1]);
-
+    gotoxy(65, 7);
+    TextColor(BACKGROUND_RED);
+    printf("EXCLUIR LIVRO");
+    int co2[4] = {20, 10, 120, 13};
     TextColor(15);
+    caixa(co2[0], co[1] + 2, co[2], co[3] -13);
+    gotoxy(30,10);
     printf("%s", str);
+    caixa(55,9,110,11);
+    gotoxy(56, 10);
     scanf("%s", pesquisa);
-
     system("cls");
 
     fseek(fp,0,SEEK_SET);
@@ -255,7 +256,7 @@ void excluirArquivo(char str[], char str2[])
                 TextColor(15);
 
                 gotoxy(65,5);
-               // printf("Cadastar Novo Livro");
+                // printf("Cadastar Novo Livro");
                 TextColor(15);
 
                 gotoxy(40,10);
@@ -344,9 +345,8 @@ void excluirArquivo(char str[], char str2[])
     {
         int co2[4] = {20, 10, 120, 13};
 
-        caixa(co2[0], co[1] + 5, co[2], co[3]);
-
-        TextColor(5);
+        caixa(co2[0], co[1] + 5, co[2], co[3] - 14);
+        TextColor(BACKGROUND_RED);
 
         gotoxy(30,10);
         printf("Livro nao encontrado!\n");
@@ -371,8 +371,8 @@ void excluirArquivo(char str[], char str2[])
     TextColor(15);
     printf("%s", str);
     scanf("%s", pesquisa);
-//    fgets(pesquisa, sizeof(pesquisa), stdin);
-//    fflush(stdin);
+    //    fgets(pesquisa, sizeof(pesquisa), stdin);
+    //    fflush(stdin);
 
     system("cls");
 
@@ -437,7 +437,7 @@ void excluirArquivo(char str[], char str2[])
 
                 break;
             }
-//
+    //
         }
 
 
@@ -459,22 +459,21 @@ void pesquisarArquivo(char str[])
     int co[4] = {20, 3, 120, 26};
     int xy[2] = {30, 10};
 
-
     char pesquisa[100];
     livro A;
 
     system("cls");
-    TextColor(14);
-    //caixa(c[0],c[1],c[2],c[3]);
-    //caixa();
-    caixa(co[0], co[1], co[2], co[3]);
-    gotoxy(xy[0], xy[1], xy[2], xy[3], xy[4], xy[5], xy[6]);
-
-
+    gotoxy(65, 7);
+    TextColor(BACKGROUND_GREEN);
+    printf("PESQUISAR LIVRO");
+    int co2[4] = {20, 10, 120, 13};
     TextColor(15);
+    caixa(co2[0], co[1] + 2, co[2], co[3] -13);
+    gotoxy(30,10);
     printf("%s", str);
+    caixa(55,9,110,11);
+    gotoxy(56, 10);
     scanf("%s", pesquisa);
-
     system("cls");
 
     fseek(fp,0,SEEK_SET);
@@ -491,7 +490,7 @@ void pesquisarArquivo(char str[])
                 TextColor(15);
 
                 gotoxy(65,5);
-               // printf("Cadastar Novo Livro");
+                // printf("Cadastar Novo Livro");
                 TextColor(15);
 
                 gotoxy(40,10);
@@ -546,10 +545,8 @@ void pesquisarArquivo(char str[])
     {
         int co2[4] = {20, 10, 120, 13};
 
-        caixa(co2[0], co[1] + 5, co[2], co[3]);
-
-        TextColor(5);
-
+        caixa(co2[0], co[1] + 5, co[2], co[3] - 14);
+        TextColor(BACKGROUND_RED);
         gotoxy(30,10);
         printf("Livro nao encontrado!\n");
 
@@ -567,12 +564,26 @@ void criarRelatorio()
     FILE *r;
 
     char arquivo[100];
-    TextColor(14);
-    caixa(27, 9, 90, 13);
-    gotoxy(36, 11);
-    TextColor(15);
+    //TextColor(14);
+    //caixa(27, 9, 90, 13);
+    //gotoxy(36, 11);
+    //TextColor(15);
+
+    // printf("Digite o nome do documento: ");
+    //gotoxy(64, 11);
+
+    int co[4] = {20,2, 120, 26};
+
+    system("cls");
+    int co2[4] = {20, 9, 120, 13};
+
+    TextColor(5);
+    caixa(co2[0], co[1] + 5, co[2], co[3] - 13);
+    gotoxy(30,10);
     printf("Digite o nome do documento: ");
-    gotoxy(64, 11);
+    caixa(58,9,110,11);
+    gotoxy(60, 10);
+
     scanf("%s", arquivo);
 //    fgets(arquivo, sizeof(arquivo), stdin);
 //    fflush(stdin);
@@ -617,7 +628,21 @@ void criarRelatorio()
     fclose(r);
 
     system("cls");
-    gotoxy(30, 20, 20, 20);
+//    int co2[4] = {20, 10, 120, 13};
+
+//    caixa(co2[0], co[1] + 5, co[2], co[3]);
+//
+//    TextColor(5);
+//
+//    gotoxy(30,10);
+
+    //co[4] = {20, 9, 120, 13};
+    caixa(co[0], co[1] + 6, co[2], co[3] -13);
+
+    TextColor(5);
+
+    gotoxy(30,10);
+   // printf("arquivo salvo!\n");
     printf("Arquivo %s criado!", arquivo);
 }
 

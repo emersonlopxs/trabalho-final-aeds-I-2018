@@ -97,12 +97,3 @@ Numero de capitulos: 1
 Numero total de paginas: 1
 
 
-Codigo: 1
-Autor: 1
-Titulo: 1
-Autor: 1
-Ano de lancamento: 1
-Numero de capitulos: 1
-Numero total de paginas: 1
-
-

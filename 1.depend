@@ -25,7 +25,7 @@
 	<windows.h>
 	"livro.h"
 
-1543947757 source:c:\users\lupuselit\desktop\1\menu.c
+1543974076 source:c:\users\lupuselit\desktop\1\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -34,7 +34,7 @@
 
 1543619513 source:c:\users\lupuselit\desktop\1\errorhandlers.c
 
-1543947103 source:c:\users\lupuselit\desktop\1\manipulararquivos.c
+1543974047 source:c:\users\lupuselit\desktop\1\manipulararquivos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
