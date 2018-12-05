@@ -142,6 +142,7 @@ int handleMenuOptions()
     int opcao = menu();
 
       while(opcao != 8) {
+            system("cls");
 
         switch(opcao) {
 
@@ -150,7 +151,7 @@ int handleMenuOptions()
                 salvarArquivo();
                 break;
             case 1:
-                alterarArquivo("Digite o titulo do livro que voce quer alterar: ", "voce quer alterar esse livro? 0 - nao 1 - sim ");
+                alterarArquivo("Digite o titulo do livro: ", "VOCE QUER ALTERAR ESSE LIVRO? 0 - nao 1 - sim ");
                 break;
             case 2:
                 excluirArquivo("Digite o titulo do livro: ", "VOCE TEM CERTEZA QUE QUER EXCLUIR ESSE LIVRO? 0-NAO 1-SIM ");
