@@ -67,7 +67,7 @@ void listarAquivo()
     while(fread(&A, sizeof(livro), 1, fp))
     {
 
-        if(!strcmp(A.titulo, "0") == 0)
+        if(!strcmp(A.codigo, "0") == 0)
         {
             TextColor(14);
             caixa(f[0],f[1],f[2],f[3]);
@@ -132,7 +132,7 @@ void alterarArquivo(char str[], char str2[])
     {
         if (fread(&A, sizeof(livro), 1, fp))
         {
-            if (strcmp(A.titulo, pesquisa) == 0)
+            if (strcmp(A.codigo, pesquisa) == 0)
             {
                 contador++;
                 TextColor(1);
@@ -276,7 +276,7 @@ void excluirArquivo(char str[], char str2[])
     {
         if (fread(&A, sizeof(livro), 1, fp))
         {
-            if (strcmp(A.titulo, pesquisa) == 0)
+            if (strcmp(A.codigo, pesquisa) == 0)
             {
                 TextColor(4);
                 system("cls");
@@ -380,7 +380,7 @@ void excluirArquivo(char str[], char str2[])
         }
     }
 
-    if (strcmp(A.titulo, pesquisa) != 0)
+    if (strcmp(A.codigo, pesquisa) != 0)
     {
         int co2[4] = {20, 10, 120, 13};
 
@@ -580,7 +580,7 @@ void pesquisarArquivo(char str[])
         }
     }
 
-    if (strcmp(A.titulo, pesquisa) != 0)
+    if (strcmp(A.codigo, pesquisa) != 0)
     {
         int co2[4] = {20, 10, 120, 13};
 

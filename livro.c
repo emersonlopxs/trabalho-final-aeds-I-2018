@@ -15,22 +15,22 @@ livro novoLivro()
     scanf("%s", A.codigo);
 
     gotoxy(50,13);
-    scanf("%s", A.titulo);
+    scanf(" %[^\n]", A.titulo);
 
     gotoxy(50,16);
-    scanf("%s", A.numerodepaginas);
+    scanf(" %[^\n]", A.numerodepaginas);
 
     gotoxy(50,19);
-    scanf("%s", A.anodelancamento);
+    scanf(" %[^\n]", A.anodelancamento);
 
     gotoxy(50,22);
-    scanf("%s", A.numerodecapitulos);
+    scanf(" %[^\n]", A.numerodecapitulos);
 
     gotoxy(50,25);
-    scanf("%s", A.editora);
+    scanf(" %[^\n]", A.editora);
 
     gotoxy(50,28);
-    scanf("%s", A.autor);
+    scanf(" %[^\n]", A.autor);
 
 
 
