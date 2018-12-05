@@ -32,20 +32,6 @@ livro novoLivro()
     gotoxy(50,28);
     scanf(" %[^\n]", A.autor);
 
-
-
-
-//    gotoxy(36,8);
-//    // permitir espacos
-//    fgets(A.codigo, sizeof(A.codigo), stdin);
-//    fflush(stdin);
-//    gotoxy(36,11);
-//    fgets(A.titulo, sizeof(A.titulo), stdin);
-//    fflush(stdin);
-//    gotoxy(36, 14);
-//    fgets(A.autor, sizeof(A.autor), stdin);
-//    fflush(stdin);
-
     return A;
 }
 

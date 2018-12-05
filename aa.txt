@@ -1,12 +1,3 @@
-Codigo: 1
-Autor: 1
-Titulo: 1
-Autor: 1
-Ano de lancamento: 1
-Numero de capitulos: 1
-Numero total de paginas: 1
-
-
 Codigo: 2
 Autor: 2
 Titulo: 2
@@ -16,12 +7,21 @@ Numero de capitulos: 2
 Numero total de paginas: 2
 
 
-Codigo: 3
-Autor: im way to good at goodbyes
-Titulo: emerson lopes
-Autor: im way to good at goodbyes
-Ano de lancamento: im nerver gonna let you close to me
-Numero de capitulos: in case you go and leave me on the dirt
-Numero total de paginas: you must think that im a fool
+Codigo: 1
+Autor: asdasd
+Titulo: asdasd asdasd asdasd
+Autor: asdasd
+Ano de lancamento: asd
+Numero de capitulos: asd   asdasd
+Numero total de paginas: asd
+
+
+Codigo: 123
+Autor: 3
+Titulo: 123
+Autor: 3
+Ano de lancamento: 3
+Numero de capitulos: 123
+Numero total de paginas: 12
 
 

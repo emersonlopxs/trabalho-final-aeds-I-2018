@@ -37,7 +37,6 @@ void salvarArquivo()
     system("cls");
     mostrarTelaCadastro();
     A = novoLivro();
-
     // salvar no final do arquivo
     fseek(fp,0,SEEK_END);
 
@@ -47,8 +46,8 @@ void salvarArquivo()
     TextColor(10);
 
     int co[4] = {20, 9, 120, 13};
-    caixa(co[0], co[1], co[2], co[3]);
 
+    caixa(co[0], co[1], co[2], co[3]);
     gotoxy(30,11);
     printf("arquivo salvo!\n");
 
@@ -95,8 +94,6 @@ void listarAquivo()
             printf("%s\n", A.numerodepaginas);
             caixa(48,y + 8,110, y + 10);
 
-
-
             gotoxy(29,y + 12);
             printf("Ano de lancamento: ");
             gotoxy(50,y + 12);
@@ -125,8 +122,6 @@ void listarAquivo()
             coord[1] += 27;
             coord[3] += 27;
         }
-
-
 
         //if(!contador) fix this
         if(0)
