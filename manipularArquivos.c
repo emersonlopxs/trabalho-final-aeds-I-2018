@@ -44,11 +44,10 @@ void salvarArquivo()
     fwrite(&A, sizeof(livro), 1, fp);
 
     system("cls");
+    TextColor(10);
 
     int co[4] = {20, 9, 120, 13};
     caixa(co[0], co[1], co[2], co[3]);
-
-    TextColor(5);
 
     gotoxy(30,11);
     printf("arquivo salvo!\n");
@@ -60,16 +59,80 @@ void listarAquivo()
     system("cls");
     livro A;
     fseek(fp,0,SEEK_SET);
+    int co[4] = {20, 3, 120, 26};
+    int contador = 0;
 
-    int xy[6] = {30, 10, 20, 100};
-    int f[4] = {27, 11, 84, 25};
+    int y = 12;
+    int coord[4] = {20, 12, 120, 35};
+
 
     while(fread(&A, sizeof(livro), 1, fp))
     {
 
         if(!strcmp(A.codigo, "0") == 0)
         {
+            TextColor(5);
+            caixa(coord[0], coord[1], coord[2], coord[3]);
+            contador++;
             TextColor(14);
+
+
+            TextColor(15);
+
+            gotoxy(40,y + 3);
+            printf("Codigo: ");
+            gotoxy(50,y + 3);
+            printf("%s\n", A.codigo);
+            caixa(48,y + 2,110, y + 4);
+
+
+            gotoxy(40,y + 6);
+            printf("Titulo: ");
+            gotoxy(50, y + 6);
+            printf("%s\n", A.titulo);
+            caixa(48,y + 5,110, y + 7);
+
+
+
+            gotoxy(29, y + 9);
+            printf("Numero de Paginas: ");
+            gotoxy(50, y + 9);
+            printf("%s\n", A.numerodepaginas);
+            caixa(48,y + 8,110, y + 10);
+
+
+
+            gotoxy(29,y + 12);
+            printf("Ano de lancamento: ");
+            gotoxy(50,y + 12);
+            printf("%s\n", A.anodelancamento);
+            caixa(48,y + 11,110, y + 13);
+
+            gotoxy(27, y + 15);
+            printf("Numero de capitulos: ");
+            gotoxy(50, y + 15);
+            printf("%s\n", A.numerodecapitulos);
+            caixa(48, y + 14,110, y + 16);
+
+            gotoxy(39,y + 18);
+            printf("Editora: ");
+            gotoxy(50,y + 18);
+            printf("%s\n", A.editora);
+            caixa(48,y + 17,110, y + 19);
+
+            gotoxy(38,y + 21);
+            printf("Autor(a): ");
+            gotoxy(50, y + 21);
+            printf("%s\n", A.autor);
+            caixa(48, y + 20,110, y + 22);
+
+            y += 27;
+            coord[1] += 27;
+            coord[3] += 27;
+
+
+
+            /*
             caixa(f[0],f[1],f[2],f[3]);
             TextColor(15);
             gotoxy(xy[0], xy[1] + 2, xy[2], xy[3], xy[4], xy[5], xy[6]);
@@ -92,14 +155,33 @@ void listarAquivo()
             gotoxy(xy[0], xy[1] + 14, xy[2], xy[3], xy[4], xy[5], xy[6]);
             //gotoxy(30, 24, 20, 20);
             printf("Numero de paginas: %s \n", A.numerodepaginas);
-
             xy[1] += 14;
             // f[1] += 14;
             f[3] += 14;
+
+            */
+
+        }
+
+
+
+        //if(!contador) fix this
+        if(0)
+        {
+            system("cls");
+            TextColor(4);
+            caixa(co[0], co[1] + 5, co[2], co[3] - 14);
+            gotoxy(30,10);
+            printf("NAO HA LIVROS CADASTRADOS!\n");
+            printf("hello\n");
         }
 
 
     }
+
+    gotoxy(65,10);
+    TextColor(BACKGROUND_BLUE);
+    printf("%i LIVRO(S) ENCONTRADOS\n", contador);
 }
 
 
@@ -118,7 +200,7 @@ void alterarArquivo(char str[], char str2[])
     TextColor(BACKGROUND_BLUE);
     printf("ALTERAR LIVRO");
     int co2[4] = {20, 10, 120, 13};
-    TextColor(11);
+    TextColor(15);
     caixa(co2[0], co[1] + 2, co[2], co[3] -13);
     gotoxy(30,10);
     printf("%s", str);
@@ -603,23 +685,15 @@ void criarRelatorio()
     FILE *r;
 
     char arquivo[100];
-    //TextColor(14);
-    //caixa(27, 9, 90, 13);
-    //gotoxy(36, 11);
-    //TextColor(15);
-
-    // printf("Digite o nome do documento: ");
-    //gotoxy(64, 11);
-
-
     int co[4] = {20,2, 120, 26};
+    int contador = 0;
     system("cls");
 
     gotoxy(68, 7);
-    TextColor(BACKGROUND_GREEN);
+    TextColor(BACKGROUND_INTENSITY);
     printf("CRIAR RELATORIO");
     int co2[4] = {20, 10, 120, 13};
-    TextColor(10);
+    TextColor(15);
     caixa(co2[0], co[1] + 2, co[2], co[3] -13);
     gotoxy(30,10);
     printf("Digite o nome do documento: ");
@@ -647,6 +721,7 @@ void criarRelatorio()
 
         if(!strcmp(A.titulo, "0") == 0)
         {
+            contador++;
 
             strcpy(codigo, A.codigo);
             strcpy(titulo, A.titulo);
@@ -667,24 +742,29 @@ void criarRelatorio()
         }
     }
 
+
     fclose(r);
 
     system("cls");
-//    int co2[4] = {20, 10, 120, 13};
 
-//    caixa(co2[0], co[1] + 5, co[2], co[3]);
-//
-//    TextColor(5);
-//
-//    gotoxy(30,10);
+    if(!contador)
+    {
+        system("cls");
+        TextColor(4);
+        caixa(co[0], co[1] + 6, co[2], co[3] - 14);
+        gotoxy(30,10);
+        printf("NAO HA LIVROS CADASTRADOS!\n");
+    }
 
-    //co[4] = {20, 9, 120, 13};
-    caixa(co[0], co[1] + 6, co[2], co[3] -13);
+    else
+    {
+        TextColor(10);
+        caixa(co[0], co[1] + 6, co[2], co[3] -13);
 
-    TextColor(10);
+        gotoxy(30,10);
+        printf("Arquivo %s criado!", arquivo);
+    }
 
-    gotoxy(30,10);
-    // printf("arquivo salvo!\n");
-    printf("Arquivo %s criado!", arquivo);
+
 }
 
