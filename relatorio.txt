@@ -1,0 +1,9 @@
+Codigo: 1
+Autor: ana
+Titulo: emerson
+Editora: rocco
+Ano de lancamento: 1998
+Numero de capitulos: 12
+Numero total de paginas: 567
+
+

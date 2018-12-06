@@ -566,7 +566,7 @@ void criarRelatorio()
             fprintf(r, "Codigo: %s\n", codigo);
             fprintf(r, "Autor: %s\n", autor);
             fprintf(r, "Titulo: %s\n", titulo);
-            fprintf(r, "Autor: %s\n", autor);
+            fprintf(r, "Editora: %s\n", editora);
             fprintf(r, "Ano de lancamento: %s\n",anodeLancamento);
             fprintf(r, "Numero de capitulos: %s\n", numeroDeCapitulos);
             fprintf(r, "Numero total de paginas: %s\n", numerodepaginas);
