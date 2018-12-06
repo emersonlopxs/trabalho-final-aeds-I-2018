@@ -12,12 +12,8 @@
 /// TODO: colocar o return fora da caixa quando o programa sair
 int main()
 {
-
-
     abrirAquivo();
     handleMenuOptions();
-
     fecharArquivo();
-
     return 0;
 }

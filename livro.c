@@ -8,8 +8,6 @@ livro novoLivro()
 {
 
     livro A;
-    /// TODO: Validar o input to usuario
-    // todos sao strings
 
     gotoxy(50,10);
     scanf("%s", A.codigo);
